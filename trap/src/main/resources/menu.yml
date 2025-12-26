@@ -1,0 +1,121 @@
+# Trap Menu Configuration
+# This file controls the visual inventory menu for /trap menu
+
+# Menu settings
+menu:
+  title: "&6&lTRAP MENÜSÜ"
+  size: 27  # Inventory size (must be multiple of 9)
+  auto-refresh: true  # Auto-refresh stats every 5 seconds
+
+# Shop Menu Settings (for /trapshop)
+shop:
+  title: "&e&lTRAP MARKETİ"
+  size: 54  # Inventory size (must be multiple of 9)
+  auto-refresh: true  # Auto-refresh shop listings every 10 seconds
+  tax-percentage: 10.0  # Tax percentage for trap sales
+  
+# Item configurations
+items:
+  # Trap Information Item
+  trap_info:
+    slot: 13
+    material: CHEST
+    name: "&e&lTRAP BİLGİLERİ"
+    lore:
+      - "&7ID: &f%trap_id%"
+      - "&7Sahip: &f%trap_owner%"
+      - "&7Seviye: &f%trap_level%"
+      - "&7Durum: &f%trap_status%"
+      - ""
+      - "&eSeviye Özellikleri:"
+      - "%trap_features%"
+    enchanted: false
+    
+  # Statistics Item
+  statistics:
+    slot: 11
+    material: BOOK
+    name: "&c&lİSTATİSTİKLER"
+    lore:
+      - "&7Toplam Hasar: &f%total_damage%"
+      - "&7Öldürme: &f%total_kills%"
+      - "&7Oyuncu Yakalama: &f%player_captures%"
+      - "&7Tecrübe Puanı: &f%experience%"
+      - "&7Son Seviye Atlama: &f%last_level_up%"
+    enchanted: true
+    
+  # PvP Status Item
+  pvp_status:
+    slot: 15
+    material: IRON_SWORD
+    name: "&a&lPVP DURUMU"
+    lore:
+      - "&7Mevcut Durum: %pvp_status%"
+      - ""
+      - "&eTıklayarak PvP'yi değiştir!"
+    enchanted: false
+    
+  # Members Item
+  members:
+    slot: 22
+    material: PLAYER_HEAD
+    name: "&b&lÜYELER"
+    lore:
+      - "&7Maksimum Üye: &f%max_members%"
+      - "&7Mevcut Üye: &f%current_members%"
+      - ""
+      - "&eÜyeler:"
+      - "%member_list%"
+    enchanted: false
+    
+  # Teleport Item
+  teleport:
+    slot: 9
+    material: ENDER_PEARL
+    name: "&d&lIŞINLAN"
+    lore:
+      - "&7Trap'a ışınlanmak için tıkla"
+      - "&7Konum: %trap_location%"
+    enchanted: false
+    
+  # Settings Item
+  settings:
+    slot: 17
+    material: REDSTONE
+    name: "&6&lAYARLAR"
+    lore:
+      - "&7Trap ayarlarını yönet"
+      - "&eTıklayarak ayarları aç!"
+    enchanted: false
+    
+  # Back/Close Item
+  close:
+    slot: 26
+    material: BARRIER
+    name: "&c&lMENÜYÜ KAPAT"
+    lore:
+      - "&7Menüyü kapatmak için tıkla"
+    enchanted: false
+
+# Decorative items (fill empty slots)
+decorative:
+  enabled: true
+  material: GRAY_STAINED_GLASS_PANE
+  name: " "
+  lore: []
+  enchanted: false
+
+# Messages
+messages:
+  no-permission: "&cBu menüyü açmak için iznin yok!"
+  no-trap: "&cŞehrinize ait bir trap bulunamadı!"
+  pvp-toggled: "&aPVP durumu %status% olarak değiştirildi!"
+  teleporting: "&dTrap'a ışınlanıyor..."
+  menu-updated: "&aMenü güncellendi!"
+
+# Action sounds
+sounds:
+  open: "ENTITY_CHICKEN_EGG"
+  click: "ENTITY_UI_BUTTON_CLICK"
+  close: "BLOCK_CHEST_CLOSE"
+  teleport: "ENTITY_ENDERMAN_TELEPORT"

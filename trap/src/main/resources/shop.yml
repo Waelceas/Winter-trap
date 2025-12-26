@@ -1,0 +1,130 @@
+# Trap Shop Menu Configuration
+# This file controls the visual inventory menu for /trapshop
+
+# Menu settings
+menu:
+  title: "&e&lTRAP MARKETİ"
+  size: 54  # Inventory size (must be multiple of 9)
+  auto-refresh: true  # Auto-refresh shop listings every 10 seconds
+
+# Item configurations
+items:
+  # Shop Info Item
+  shop_info:
+    slot: 4
+    material: EMERALD
+    name: "&a&lMARKET BİLGİLERİ"
+    lore:
+      - "&7Burada trap alabilir, satabilir"
+      - "&7ve yükseltme yapabilirsiniz!"
+      - "&7Mevcut vergi oranı: &f%tax_percentage%%"
+      - ""
+      - "&eBakiye: &f%balance%"
+    enchanted: true
+    
+  # My Traps Item
+  my_traps:
+    slot: 19
+    material: CHEST
+    name: "&b&lTRAP'LARIM"
+    lore:
+      - "&7Kendi trap'larınızı yönetin"
+      - "&7Satış yapın veya yükseltin"
+      - ""
+      - "&eTıklayarak trap'larınızı görüntüleyin!"
+    enchanted: false
+    
+  # Buy Traps Item
+  buy_traps:
+    slot: 21
+    material: GOLD_INGOT
+    name: "&6&lTRAP SATIN AL"
+    lore:
+      - "&7Satılık trap'ları görüntüleyin"
+      - "&7Yeni trap satın alın"
+      - ""
+      - "&eTıklayarak satılık trap'ları görüntüleyin!"
+    enchanted: false
+    
+  # Market Stats Item
+  market_stats:
+    slot: 23
+    material: BOOK
+    name: "&c&lMARKET İSTATİSTİKLERİ"
+    lore:
+      - "&7Toplam satılık trap: &f%traps_for_sale%"
+      - "&7Toplam satış: &f%total_sales%"
+      - "&7Son güncelleme: &f%last_update%"
+      - ""
+      - "&ePiyasa durumunu görüntüleyin!"
+    enchanted: false
+    
+  # Refresh Item
+  refresh:
+    slot: 25
+    material: CLOCK
+    name: "&d&lYENİLE"
+    lore:
+      - "&7Market listesini yeniler"
+      - "&7En güncel fiyatları gösterir"
+      - ""
+      - "&eTıklayarak yenile!"
+    enchanted: false
+    
+  # Back/Close Item
+  close:
+    slot: 49
+    material: BARRIER
+    name: "&c&lKAPAT"
+    lore:
+      - "&7Menüyü kapatmak için tıkla"
+    enchanted: false
+
+# Trap listing items (for pagination)
+trap_item:
+  material: PAPER
+  name_template: "&e&lTRAP #%trap_id%"
+  lore_template:
+    - "&7Sahip: &f%owner%"
+    - "&7Fiyat: &f%price% TL"
+    - "&7Seviye: &f%level%"
+    - "&7Konum: &f%location%"
+    - ""
+    - "&eTıklayarak satın al!"
+  enchanted: false
+
+# Decorative items (fill empty slots)
+decorative:
+  enabled: true
+  material: YELLOW_STAINED_GLASS_PANE
+  name: " "
+  lore: []
+  enchanted: false
+
+# Messages
+messages:
+  no-permission: "&cBu menüyü açmak için iznin yok!"
+  trap-purchased: "&aTrap #%trap_id% başarıyla satın alındı! Fiyat: %price% TL"
+  insufficient-funds: "&cYeterli paranız yok! Gerekli: %price% TL"
+  trap-put-for-sale: "&aTuzak başarıyla satışa çıkarıldı! Fiyat: &e%price% TL"
+  trap-listed: "&aTrap #%trap_id% başarıyla satışa çıkarıldı! Fiyat: %price% TL"
+  trap-sold: "&aTrap #%trap_id% satıldı! Kazanç: %price% TL"
+  shop-updated: "&aMarket bilgileri güncellendi!"
+  listing-cancelled: "&cTrap satışı iptal edildi."
+
+# Action sounds
+sounds:
+  open: "ENTITY_VILLAGER_TRADING"
+  click: "ENTITY_UI_BUTTON_CLICK"
+  close: "BLOCK_CHEST_CLOSE"
+  purchase: "ENTITY_EXPERIENCE_ORB_PICKUP"
+  sell: "ENTITY_ITEM_PICKUP"
+  refresh: "BLOCK_NOTE_BLOCK_HARP"
+  upgrade: "ENTITY_PLAYER_LEVELUP"
+
+# Shop settings
+shop:
+  tax-percentage: 10.0
+  max-traps-per-town: 10
+  price-per-level: 100.0
+  min-sale-price: 50.0

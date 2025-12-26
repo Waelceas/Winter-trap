@@ -1,0 +1,166 @@
+# Trap Level Configuration
+# This file contains all level-related configurations for traps
+# You can customize each level with different features and bonuses
+
+# Base settings for trap levels
+settings:
+  max-level: 50
+  base-exp-required: 1000
+  exp-multiplier: 1.5
+  exp-per-player-capture: 100
+  exp-per-damage: 1
+
+# Level up rewards and requirements
+levels:
+  1:
+    display-name: "&7Başlangıç Seviyesi"
+    exp-required: 0
+    bonus-damage: 0.0
+    bonus-range: 0.0
+    max-members: 3
+    price: 0.0
+    features:
+      - "basic_trap"
+      - "pvp_control"
+    
+  2:
+    display-name: "&aÇırak Tuzakçı"
+    exp-required: 1000
+    bonus-damage: 0.5
+    bonus-range: 0.5
+    max-members: 4
+    price: 5000.0
+    features:
+      - "advanced_pvp"
+      - "member_permissions"
+      - "trap_statistics"
+    
+  3:
+    display-name: "&eUsta Tuzakçı"
+    exp-required: 2500
+    bonus-damage: 1.0
+    bonus-range: 1.0
+    max-members: 5
+    price: 10000.0
+    features:
+      - "auto_defense"
+      - "healing_zone"
+      - "enhanced_permissions"
+    
+  4:
+    display-name: "&6Usta Tuzakçı"
+    exp-required: 5000
+    bonus-damage: 1.5
+    bonus-range: 1.5
+    max-members: 6
+    price: 25000.0
+    features:
+      - "area_damage"
+      - "teleport_prevention"
+      - "advanced_statistics"
+    
+  5:
+    display-name: "&bElit Tuzakçı"
+    exp-required: 10000
+    bonus-damage: 2.0
+    bonus-range: 2.0
+    max-members: 8
+    price: 50000.0
+    features:
+      - "all_previous_features"
+      - "custom_effects"
+      - "economy_boost"
+
+# Feature definitions (what each feature does)
+feature-definitions:
+  basic_trap:
+    description: "Temel trap fonksiyonları"
+    enabled-by-default: true
+    
+  pvp_control:
+    description: "PVP ayarlarını kontrol etme"
+    enabled-by-default: true
+    
+  advanced_pvp:
+    description: "Gelişmiş PVP seçenekleri"
+    enabled-by-default: false
+    
+  member_permissions:
+    description: "Üye izinlerini ayarlama"
+    enabled-by-default: false
+    
+  trap_statistics:
+    description: "Trap istatistiklerini görme"
+    enabled-by-default: false
+    
+  auto_defense:
+    description: "Otomatik savunma sistemi"
+    enabled-by-default: false
+    
+  healing_zone:
+    description: "Trap içinde iyileştirme alanı"
+    enabled-by-default: false
+    
+  enhanced_permissions:
+    description: "Gelişmiş izin sistemi"
+    enabled-by-default: false
+    
+  area_damage:
+    description: "Alan etkili hasar"
+    enabled-by-default: false
+    
+  teleport_prevention:
+    description: "Düşman ışınlanmasını engelleme"
+    enabled-by-default: false
+    
+  advanced_statistics:
+    description: "Detaylı istatistikler"
+    enabled-by-default: false
+    
+  custom_effects:
+    description: "Özel efektler ve partiküller"
+    enabled-by-default: false
+    
+  economy_boost:
+    description: "Ekonomik bonuslar"
+    enabled-by-default: false
+
+# Shop settings
+shop:
+  enable-trap-shop: true
+  tax-percentage: 10.0  # Percentage of tax on trap sales
+  min-price: 1000.0     # Minimum price for trap sales
+  max-price: 1000000.0  # Maximum price for trap sales
+  
+# Level up effects
+effects:
+  enable-level-up-effects: true
+  level-up-particle: "VILLAGER_HAPPY"
+  level-up-sound: "ENTITY_PLAYER_LEVELUP"
+  level-up-title: "&aSeviye Atladın!"
+  level-up-subtitle: "&eYeni Seviye: %level%"
+
+# Statistics tracking
+statistics:
+  track-player-captures: true
+  track-damage-dealt: true
+  track-trap-sales: true
+  track-level-ups: true
+
+# Leaderboard settings
+leaderboard:
+  update-interval: 300  # seconds
+  max-entries: 10
+  cache-time: 60        # seconds to cache leaderboard data
+
+# Messages
+messages:
+  not-enough-exp: "&cBu seviyeye ulaşmak için yeterli tecrübe puanın yok! Gerekli: %exp%"
+  level-up: "&aTebrikler! &e%trap% &atuzak seviyesi &e%level% &aoldu!"
+  max-level: "&cBu tuzak maksimum seviyeye ulaştı!"
+  trap-sold: "&aTuzak başarıyla satışa çıkarıldı! Fiyat: &e%price%"
+  trap-bought: "&aTuzak başarıyla satın alındı! Kalan bakiye: &e%balance%"
+  not-enough-money: "&cYeterli paranız yok! Gerekli: &e%price%"
+  trap-not-for-sale: "&cBu tuzak satılık değil!"
+  trap-already-for-sale: "&cBu tuzak zaten satılık!"
+  trap-sale-cancelled: "&cTuzak satışı iptal edildi."

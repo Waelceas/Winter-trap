@@ -1,0 +1,41 @@
+# Trap Sistemi Yapılandırması
+
+# Trap satın alma ücreti (Town kasasından çekilir)
+trap-price: 5000.0
+
+# Fiyatlandırma Ayarları
+pricing:
+  # Temel trap satın alma fiyatı
+  base-trap-price: 10000.0
+  
+  # Yükseltme maliyeti ayarları
+  upgrade:
+    base-cost: 5000.0
+    multiplier: 1.5  # Her seviye için çarpan
+  
+  # Satış fiyatı ayarları  
+  sell:
+    base-price: 5000.0
+    level-bonus: 2000.0  # Seviye başına bonus
+    kill-bonus: 100.0    # Her kill başına bonus
+  
+  # Market (havuz) fiyat ayarları
+  market:
+    base-price: 5000.0     # Temel market fiyatı
+    level-bonus: 2000.0    # Seviye başına bonus
+    kill-bonus: 100.0      # Her kill başına bonus
+  
+  # Maksimum trap seviyesi
+  max-trap-level: 10
+
+# Vergi miktarı
+tax-amount: 100.0
+
+# Vergi periyodu (dakika cinsinden)
+tax-interval-minutes: 60
+
+# Admin yetkisi
+admin-permission: "admin.trap"
+
+# PvP açma/kapama ücreti
+pvp-change-cost: 1000.0

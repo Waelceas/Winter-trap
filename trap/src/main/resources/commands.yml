@@ -1,0 +1,87 @@
+# Trap Plugin Command Configuration
+# Bu dosyadan komutları aktif/pasif edebilirsiniz
+
+commands:
+  # Player Commands
+  trap:
+    enabled: true
+    subcommands:
+      al:
+        enabled: true
+        description: "Trap satın alır"
+        permission: "trap.player.buy"
+      sat:
+        enabled: true
+        description: "Trap'ı satış fiyatının yarısına sat"
+        permission: "trap.player.sell"
+      yetki:
+        enabled: true
+        description: "Trap yetkisi yönetimi - ver/al seçenekleri"
+        permission: "trap.player.permission"
+        subcommands:
+          ver:
+            enabled: true
+            description: "Oyuncuya trap yetkisi verir"
+            permission: "trap.player.permission.give"
+          al:
+            enabled: true
+            description: "Oyuncunun trap yetkisini alır"
+            permission: "trap.player.permission.take"
+      pvp:
+        enabled: true
+        description: "Trap PvP ayarını değiştirir"
+        permission: "trap.player.pvp"
+      bilgi:
+        enabled: true
+        description: "Tüm trap'ları listeler"
+        permission: "trap.player.info"
+      menu:
+        enabled: true
+        description: "Trap menüsünü açar"
+        permission: "trap.player.menu"
+      help:
+        enabled: true
+        description: "Yardım menüsünü gösterir"
+        permission: "trap.player.help"
+
+  # Admin Commands
+  trapadmin:
+    enabled: true
+    subcommands:
+      reload:
+        enabled: true
+        description: "Plugin yapılandırmasını yeniden yükler"
+        permission: "trap.admin.reload"
+      ekle:
+        enabled: true
+        description: "Yeni trap ekler"
+        permission: "trap.admin.add"
+      sil:
+        enabled: true
+        description: "Trap siler"
+        permission: "trap.admin.remove"
+      editor:
+        enabled: true
+        description: "Chunk seç veya wand al"
+        permission: "trap.admin.editor"
+      help:
+        enabled: true
+        description: "Admin yardım menüsünü gösterir"
+        permission: "trap.admin.help"
+
+  # Menu Command
+  trap-menu:
+    enabled: true
+    description: "Trap menüsü ve ışınlanma"
+    permission: "trap.player.menu"
+
+# General Settings
+settings:
+  # Town detection refresh delay (ticks)
+  town-detection-delay: 100
+  
+  # Auto-reload on town creation
+  auto-reload-on-town-create: true
+  
+  # Debug mode
+  debug: false

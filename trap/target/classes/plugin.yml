@@ -1,0 +1,36 @@
+name: winter-trap
+version: '0.1104'
+main: com.glacio.trap.TrapSystem
+api-version: 1.20
+api: '1.20'
+depend: [Vault, Towny]
+softdepend: [PlaceholderAPI]
+commands:
+  trap:
+    description: Ana trap komutu
+    usage: /trap [yardım|bilgi|al|sat|pvp|yetkial|yetki|menu]
+  trapadmin:
+    description: Admin trap komutları
+    usage: /trapadmin [yardım|ekle|sil|editor|chunk|wand|reload]
+    permission: admin.trap
+  trapshop:
+    description: Trap alışveriş ve yükseltme menüsü
+    aliases: [ts, tshop]
+    usage: /trapshop [list|info|sell|buy|cancel|upgrade]
+
+permissions:
+  admin.trap:
+    description: Admin yetkisi
+    default: op
+  trapshop.use:
+    description: Tuzak marketini kullanma yetkisi
+    default: true
+  trapshop.sell:
+    description: Tuzak satışı yapma yetkisi
+    default: true
+  trapshop.buy:
+    description: Tuzak satın alma yetkisi
+    default: true
+  trapshop.upgrade:
+    description: Tuzak yükseltme yetkisi
+    default: true
